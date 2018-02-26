@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="https://cdn3.iconfinder.com/data/icons/barbecue-icons-1/476/Fork_And_Steak_Knife-512.png" alt="Icon">
+      &nbsp;
+      Restau-Rant
+    </a>
+    <div class="navbar-burger" data-target="#mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div id="mobile-menu" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="/restaurants">All restuarants</a>
+      <% if(locals.isAuthenticated) { %>
+        <a class="navbar-item" href="/restaurants/new">Add a restuarant</a>
+        <a class="navbar-item" href="/logout">Logout</a>
+      <% } else { %>
+        <a class="navbar-item" href="/register">Register</a>
+        <a class="navbar-item" href="/login">Login</a>
+      <% } %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,13 @@
+.hero.homepage {
+  background-image: url(https://sbnsoftware.com/wp-content/uploads/sbn-hospitality-hotel-management-header.jpg);
+  background-size: cover;
+}
+
+.comments {
+  margin-bottom: 1.5rem;
+}
+
+form.delete {
+  display: inline-block;
+  float: right;
+}

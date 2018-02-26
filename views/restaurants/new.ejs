@@ -1,0 +1,42 @@
+<div class="container">
+  <form method="POST" action="/restaurants">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" name="name" type="text" placeholder="Name" required minlength="2">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Location</label>
+      <div class="control">
+        <input class="input" name="location" type="text" placeholder="Location" required minlength="10">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Cuisine</label>
+      <div class="control">
+        <input class="input" name="cusine" type="text" placeholder="cusine" required minlength="3">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Image</label>
+      <div class="control">
+        <input class="input" name="image" type="text" placeholder="Image" required pattern="^http">
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Description(380 chars max)</label>
+      <div class="control">
+        <textarea class="textarea" name="description" placeholder="Description (380 chars max)" maxlength="380"></textarea>
+      </div>
+    </div>
+    
+    <div class="control">
+      <button class="button is-primary">Submit</button>
+    </div>
+  </form>
+</div>

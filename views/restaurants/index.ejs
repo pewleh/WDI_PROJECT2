@@ -1,0 +1,21 @@
+<main class="container">
+  <div class="columns is-multiline">
+    <% restaurants.forEach(restaurant => { %>
+      <div class="column is-one-quarter-desktop is-half-tablet">
+        <a href="/restaurants/<%= restaurant._id %>">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <img src="<%= restaurant.image %>" alt="<%= restaurant.name%>">
+              </figure>
+            </div>
+            <div class="card-content">
+              <h3 class="title"><%= restaurant.name %></h3>
+              <h4 class="subtitle"><%= restaurant.location %></h4>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+</main>

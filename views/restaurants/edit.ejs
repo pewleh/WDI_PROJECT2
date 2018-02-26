@@ -1,0 +1,44 @@
+<div class="container">
+  <form method="POST" action="/restaurants/<%= restaurant._id%>">
+
+    <%# have to add this for method override %>
+    <input type="hidden" name="_method" value="PUT">
+
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" name="name" type="text" placeholder="Name" value="<%=restaurant.name%>" required>
+      </div>
+    </div>
+    <div class="field">
+      <%# name of the input fields is the same as the model which is why we can dump req.body straight into the Restaurant.create function %>
+      <label class="label">Location</label>
+      <div class="control">
+        <input class="input" name="location" type="text" placeholder="location" value="<%=restaurant.location%>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Cuisine</label>
+      <div class="control">
+        <input class="input" name="cuisine" type="text" placeholder="cusine" value="<%=restaurant.cuisine%>" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Image</label>
+      <div class="control">
+        <input class="input" name="image" type="text" placeholder="Image" value="<%=restaurant.image%>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Description (380 chars max)</label>
+      <div class="control">
+        <%# no value attribute for text areas, since they are not self closing you just put the text between the tags %>
+        <textarea class="textarea" name="description" placeholder="Description (380 chars max)" maxlength="380"><%=restaurant.tastingNotes%></textarea>
+      </div>
+    </div>
+    <div class="control">
+      <button class="button is-primary">Submit</button>
+    </div>
+  </form>
+</div>
