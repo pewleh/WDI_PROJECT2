@@ -7,12 +7,12 @@
   <div class="columns">
     <div class="column">
       <h3 class="title"><%= restaurant.name %></h3>
-      <h4 class="subtitle"><%= restaurant.location %></h4>
+      <h4 class="subtitle"><%= restaurant.cuisine %></h4>
       <div class="icon is-small">
         <i class="fa fa-pencil"></i>
       </div>
       <p><%= restaurant.description %></p>
-
+      <p><%= restaurant.location %></p>
 
       <% if(locals.isAuthenticated) { %>
         <a href="/restaurants/<%= restaurant._id %>/edit" class="button is-primary">Edit</a>
