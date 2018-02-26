@@ -14,5 +14,7 @@
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
     "mongoose": "^5.0.7"
-  }
+  },
+  "repository": "git@github.com:pewleh/WDI_PROJECT2.git",
+  "author": "Paula Nowicka <paula.nowicka@yahoo.co.uk>"
 }

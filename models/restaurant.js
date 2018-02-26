@@ -16,7 +16,9 @@ const schema = new mongoose.Schema({
   location: {type: String, minlength: 10, required: true},
   description: {type: String, required: true},
   cuisine: {type: String, minlength: 3, required: true},
-  image: { type: String, pattern: /^https?:\/\/.+/},
+  image1: { type: String, pattern: /^https?:\/\/.+/},
+  image2: { type: String, pattern: /^https?:\/\/.+/},
+  image3: { type: String, pattern: /^https?:\/\/.+/},
   comments: [commentSchema]
 });
 
