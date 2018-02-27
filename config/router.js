@@ -25,11 +25,18 @@ router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
 
+router.route('/profile/:id')
+  .get(secureRoute, registrations.profile);
+
 router.route('/restaurants/:id/comments')
   .post(secureRoute, restaurants.commentsCreate);
 
 router.route('/restaurants/:id/comments/:commentId')
   .delete(secureRoute, restaurants.commentsDelete);
+
+router.route('/restaurants/:id/favourite')
+  .post(secureRoute, restaurants.resFavourite)
+  .delete(secureRoute, restaurants.deleteFavourite);
 
 router.route('/login')
   .get(sessions.new)

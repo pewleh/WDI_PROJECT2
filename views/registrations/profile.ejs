@@ -1,15 +1,6 @@
 <main class="container">
-
-  <form>
-    <select name="cuisine">
-      <% cuisines.forEach(cuisine => { %>
-        <option<% if(cuisine === selectedCuisine) {%> selected<%}%>><%= cuisine %></option> <% }) %>
-      </select>
-      <button>Go</button>
-    </form>
-
   <div class="columns is-multiline">
-    <% restaurants.forEach(restaurant => { %>
+    <% user.favouriteList.forEach(restaurant => { %>
       <div class="column is-half-desktop is-half-tablet">
         <a href="/restaurants/<%= restaurant._id %>">
           <div class="card">

@@ -1,9 +1,27 @@
 const Restaurant = require('../models/restaurant');
+const Promise = require('bluebird');
 
-function indexRoute(req, res) {
-  Restaurant.find()
-    .then(restaurants => res.render('restaurants/index', { restaurants }));
+// function indexRoute(req, res) {
+//   Restaurant.find()
+//     .then(restaurants => res.render('restaurants/index', { restaurants }));
+// }
+function indexRoute(req, res){
+  Promise.props({
+    allRestaurants: Restaurant.find().exec(),
+    restaurants: Restaurant.find(req.query).exec()
+  })
+    .then(data => {
+      const allCuisines = data.allRestaurants.map(restaurant => restaurant.cuisine);
+      const uniqueCuisines = Array.from(new Set(allCuisines)).sort();
+
+      res.render('restaurants/index', {
+        restaurants: data.restaurants,
+        cuisines: uniqueCuisines,
+        selectedCuisine: req.query.cuisine
+      });
+    });
 }
+
 
 function newRoute(req, res) {
   res.render( 'restaurants/new' );
@@ -70,6 +88,25 @@ function commentsDeleteRoute(req, res, next){
     .catch(next);
 }
 
+function resFavouriteRoute(req, res, next){
+  req.currentUser.favouriteList.push(req.params.id);
+
+  req.currentUser.save()
+    .then(() => res.redirect(`/restaurants/${req.params.id}`))
+    .catch(next);
+}
+
+function deleteFavouriteRoute(req, res, next){
+
+  req.currentUser.favouriteList = req.currentUser.favouriteList.filter(restaurant =>{
+    return !restaurant.equals(req.params.id);
+  });
+
+  req.currentUser.save()
+    .then(() => res.redirect(`/restaurants/${req.params.id}`))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   new: newRoute,
@@ -79,5 +116,12 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   commentsCreate: commentsCreateRoute,
-  commentsDelete: commentsDeleteRoute
+  commentsDelete: commentsDeleteRoute,
+  resFavourite: resFavouriteRoute,
+  deleteFavourite: deleteFavouriteRoute
 };
+
+//after phto: res.render('restaurants/index', {restaurants: data.restauant, origins, selectedOrigin: req.query.origin});
+//index form
+
+//add.sort too.
