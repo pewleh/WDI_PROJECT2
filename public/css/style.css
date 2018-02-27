@@ -1,6 +1,20 @@
+html{
+  background-color: #132d28;
+}
 .hero.homepage {
   background-image: url(https://sbnsoftware.com/wp-content/uploads/sbn-hospitality-hotel-management-header.jpg);
   background-size: cover;
+}
+
+.navbar{
+  background-color: #0000008a;
+  margin-bottom: 30px;
+
+}
+.navbar-item{
+  color: white;
+  font-family: 'Alegreya', serif;
+
 }
 
 .comments {
@@ -57,4 +71,40 @@ form.delete {
     border: solid #164409b5 4px;
     position:absolute;
     top:77%;
+}
+
+.notification.is-success {
+    background-color: #7b4f4f;
+    color: #fff;
+}
+
+.newResForm{
+  width: 700px;
+  border: dotted #00000054 6px;
+  padding: 20px;
+  align-items: center;
+  font-family: 'Alegreya', serif;
+  margin-left: 225px;
+}
+.newResDeco{
+  border: solid black 2px;
+  background-color: #0000008c;
+}
+
+.resSubmit{
+  background-color: #132d28;
+  border: dotted #132d28 6px;
+  color:white;
+}
+
+.resHead{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  font-weight: 5;
+  padding-bottom: 20px;
+
+}
+.slick-track{
+  height:400px;
 }

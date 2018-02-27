@@ -19,7 +19,6 @@ function showRoute(req,res, next) {
   Restaurant.findById(req.params.id)
     .populate('comments.user')
     .then(restaurant => {
-      console.log(restaurant);
       if(!restaurant) return res.render('pages/404');
       res.render('restaurants/show', { restaurant });
     })
@@ -45,6 +44,11 @@ function deleteRoute(req,res) {
 }
 
 function commentsCreateRoute(req, res, next) {
+  req.body.rating = (parseFloat(req.body.food) + parseFloat(req.body.service) + parseFloat(req.body.ambiance)).toFixed(1) / 3;
+  req.body.foodRating = ((parseFloat(req.body.food))/3).toFixed(1);
+  req.body.serviceRating =((parseFloat(req.body.service))/3).toFixed(1);
+  req.body.ambianceRating =((parseFloat(req.body.ambiance))/3).toFixed(1);
+  console.log(req.body.rating);
   req.body.user = req.currentUser;
   Restaurant.findById(req.params.id)
     .then(restaurant => {

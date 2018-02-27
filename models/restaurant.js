@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema({
   content: { type: String },
   rating: {type: Number, required: true},
+  food: {type: Number, required: true},
+  service: {type: Number, required: true},
+  ambiance: {type: Number, required: true},
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
@@ -16,20 +19,39 @@ const schema = new mongoose.Schema({
   location: {type: String, minlength: 10, required: true},
   description: {type: String, required: true},
   cuisine: {type: String, minlength: 3, required: true},
-  image1: { type: String, pattern: /^https?:\/\/.+/},
-  image2: { type: String, pattern: /^https?:\/\/.+/},
-  image3: { type: String, pattern: /^https?:\/\/.+/},
+  link: {type: String, required: true},
+  image1: { type: String},
+  image2: { type: String},
+  image3: { type: String},
   comments: [commentSchema]
 });
 
-schema.methods.calculateRating = function calculateRating() {
-  let currentRating = 0;
-  this.comments.forEach(comment => {
-    currentRating += comment.rating;
+schema.virtual('overallRating')
+  .get(function calculateRating() {
+    if(!this.comments.length) return 'Unrated';
+    const averageRating = this.comments.reduce((sum, comment) => sum + comment.rating, 0) / this.comments.length;
+    return averageRating.toFixed(1);
   });
-  currentRating = currentRating / (this.comments.length);
-  return currentRating.toFixed(1);
-};
+
+schema.virtual('foodRating')
+  .get(function calculateFoodRating() {
+    if(!this.comments.length) return 'Unrated';
+    const averageRating = this.comments.reduce((sum, comment) => sum + comment.food, 0) / this.comments.length;
+    return averageRating.toFixed(1);
+  });
+
+schema.virtual('serviceRating')
+  .get(function calculateServiceRating() {
+    if(!this.comments.length) return 'Unrated';
+    const averageRating = this.comments.reduce((sum, comment) => sum + comment.service, 0) / this.comments.length;
+    return averageRating.toFixed(1);
+  });
+schema.virtual('ambianceRating')
+  .get(function calculateAmbianceRating() {
+    if(!this.comments.length) return 'Unrated';
+    const averageRating = this.comments.reduce((sum, comment) => sum + comment.ambiance, 0) / this.comments.length;
+    return averageRating.toFixed(1);
+  });
 
 
 //Mongoose will pluralise the record name cheese and create a collection called cheeses

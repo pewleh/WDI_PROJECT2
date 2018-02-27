@@ -54,10 +54,10 @@ app.use(userAuth);
 app.use(router);
 
 //set up a global error catcher
-app.use((err, req, res, next) => {
+app.use((err, req, res, next) => { // eslint-disable-line
+  console.log(err);
   if(err.name === 'ValidationError') return res.render('pages/422');
   res.render('pages/500', {err});
-  next(err);
 });
 
 // Listen for incoming traffic
