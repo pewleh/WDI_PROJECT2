@@ -1,21 +1,31 @@
 <div class="container">
-  <form method="POST" action="/register">
-    <div class="field">
-      <label for="username">Username</label>
-      <input class="input" type="text" name="username" id="username">
+  <h1 class="resHead has-text-white">Sign up below!</h1>
+  <div class="registrationForm is-half-desktop">
+    <form method="POST" action="/register" class="innerRegForm">
+      <div class="field has-text-white">
+        <label for="username">Username</label>
+        <input class="input" type="text" name="username" id="username">
+      </div>
+      <div class="field has-text-white">
+        <label for="email">Email</label>
+        <input class="input" type="text" name="email" id="email">
+      </div>
+      <div class="field has-text-white">
+        <label for="password">Password</label>
+        <input class="input" type="password" name="password" id="password">
+      </div>
+      <div class="field has-text-white">
+        <label for="passwordConfirmation">Password Confirmation</label>
+        <input class="input" type="password" name="passwordConfirmation" id="passwordConfirmation">
+      </div>
+      <button class="regButton">Register</button>
+    </form>
+  </div>
+  <div class ="registrationFormPics is-half-desktop">
+    <div class="imgCarousel">
+      <div><img src="http://sirenuse.it/media/39633/bar_restaurants_lasponda_1michelin-star-positano_02.jpg"></div>
+      <div><img src="https://blogs.restaurant.gb.net/wp-content/uploads/2017/06/best-restaurants-gq-0616-03.jpg"></div>
+      <div><img src="https://www.squaremeal.co.uk/~/media/Images/Venues/_STU/Searcys%20The%20Gherkin/1701_Searcys%20The%20Gherkin_guide%20photo%20choice%20web.jpg?h=341&&w=596&la=en"></div>
     </div>
-    <div class="field">
-      <label for="email">Email</label>
-      <input class="input" type="text" name="email" id="email">
-    </div>
-    <div class="field">
-      <label for="password">Password</label>
-      <input class="input" type="password" name="password" id="password">
-    </div>
-    <div class="field">
-      <label for="passwordConfirmation">Password Confirmation</label>
-      <input class="input" type="password" name="passwordConfirmation" id="passwordConfirmation">
-    </div>
-    <button class="button">Register</button>
-  </form>
+  </div>
 </div>

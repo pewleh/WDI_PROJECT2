@@ -14,6 +14,7 @@ html{
 .navbar-item{
   color: white;
   font-family: 'Alegreya', serif;
+  font-size: 20px;
 
 }
 
@@ -28,23 +29,22 @@ form.delete {
 
 .imgCarousel{
   width: 600px;
-  border-radius: 50%;
 }
 
 .mainHead {
-    color: white;
-    font-size: 3.95rem;
-    font-weight: 20;
-    font-family: 'Pacifico', cursive;
-    line-height: 6;
-    background-color: #000000bd;
-    width: 365px;
-    border-radius: 100%;
-    height: 365px;
-    border: dotted #86a28a59 4px;
-    position: absolute;
-    margin-left: 2.5%;
-    margin-top:2.5%;
+  color: white;
+  font-size: 3.95rem;
+  font-weight: 20;
+  font-family: 'Pacifico', cursive;
+  line-height: 6;
+  background-color: #000000bd;
+  width: 365px;
+  border-radius: 100%;
+  height: 365px;
+  border: dotted #86a28a59 4px;
+  position: absolute;
+  margin-left: 2.5%;
+  margin-top:2.5%;
 }
 
 .mainHeadDeco{
@@ -59,23 +59,24 @@ form.delete {
 }
 
 .mainSub {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 400;
-    font-family: 'Alegreya', serif;
-    background-color: #000000d6;
-    line-height: 1.25;
-    padding: 15px;
-    width: 600px;
-    margin-left: 28.5%;
-    border: solid #164409b5 4px;
-    position:absolute;
-    top:77%;
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+  font-family: 'Alegreya', serif;
+  background-color: #000000d6;
+  line-height: 1.25;
+  padding: 15px;
+  width: 600px;
+  margin-left: 28.5%;
+  border: solid #164409b5 4px;
+  position:absolute;
+  top:77%;
 }
 
 .notification.is-success {
-    background-color: #7b4f4f;
-    color: #fff;
+  background-color: #7b4f4f;
+  color: #fff;
+  font-size: 25px;
 }
 
 .newResForm{
@@ -89,6 +90,7 @@ form.delete {
 .newResDeco{
   border: solid black 2px;
   background-color: #0000008c;
+  border-radius: 4%;
 }
 
 .resSubmit{
@@ -105,6 +107,36 @@ form.delete {
   padding-bottom: 20px;
 
 }
+
+.registrationForm{
+  width:550px;
+  position: absolute;
+  border: solid #22460c 2px;
+  border-radius: 15%;
+  padding: 30px;
+  background-color: #8be9f369;
+  text-align: center;
+  font-family: 'Alegreya', serif;
+
+}
+.innerRegForm{
+  padding: 20px;
+  border: 2px solid #050803d1;
+  border-radius: 15%;
+  background-color: #050e0d6b;
+}
+.registrationFormPics{
+  margin-left:620px;
+}
+
+.regButton{
+    font-family: 'Alegreya', serif;
+    height:80px;
+    border-radius: 50%;
+    font-size: 20px;
+
+  }
+
 .slick-track{
   height:400px;
 }
