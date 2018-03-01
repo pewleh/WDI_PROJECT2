@@ -1,64 +1,64 @@
-  <div class="container">
-    <h1 class = "has-text-white resHead"> Discovered somewhere worthwhile?</h1>
-    <div class="newResDeco">
+<div class="container">
+  <h1 class = "has-text-white resHead"> Discovered somewhere worthwhile?</h1>
+  <div class="newResDeco">
     <form method="POST" action="/restaurants" class="newResForm">
-      <div class="field">
-        <label class="label has-text-white">Name</label>
-        <div class="control">
-          <input class="input" name="name" type="text" placeholder="Full name of restaurant" required minlength="2">
-        </div>
+    <div class="field">
+      <label class="label has-text-white">Name</label>
+      <div class="control">
+        <input class="input" name="name" type="text" placeholder="Full name of restaurant" required minlength="2">
       </div>
+    </div>
 
-      <div class="field">
-        <label class="label has-text-white">Location</label>
-        <div class="control">
-          <input class="input" name="location" type="text" placeholder="Location (including the postcode)" required minlength="10">
-        </div>
+    <div class="field">
+      <label class="label has-text-white">Location</label>
+      <div class="control">
+        <input class="input" name="location" type="text" placeholder="Location (including the postcode)" required minlength="10">
       </div>
+    </div>
 
-      <div class="field">
-                <label class="label has-text-white">Cuisine</label>
-                <div class="control">
-                  <div class="control">
-                    <select name="cuisine">
-                      <option>French</option>
-                      <option>Japanese</option>
-                      <option>British</option>
-                      <option>Spanish</option>
-                      <option>Eastern European</option>
-                      <option>Indian</option>
-                      <option>Chinese</option>
-                      <option>Thai</option>
-                      <option>other</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+    <div class="field">
+      <label class="label has-text-white">Cuisine</label>
+        <div class="control">
+          <div class="control">
+            <select name="cuisine">
+              <option>French</option>
+              <option>Japanese</option>
+              <option>British</option>
+              <option>Spanish</option>
+              <option>Eastern European</option>
+              <option>Indian</option>
+              <option>Chinese</option>
+              <option>Thai</option>
+              <option>other</option>
+            </select>
+          </div>
+        </div>
+    </div>
 
-      <div class="field">
+    <div class="field">
       <label class="label has-text-white">Image url</label>
         <div class="control">
           <input class="input" name="image" type="text" placeholder="Copy the image address and paste it into here!">
         </div>
-      </div>
+    </div>
 
-      <div class="field">
-        <label class="label has-text-white">Link to make a reservation</label>
+    <div class="field">
+      <label class="label has-text-white">Link to make a reservation</label>
         <div class="control">
           <textarea class="textarea" name="link" placeholder="link to make a reservation"></textarea>
         </div>
-      </div>
+    </div>
 
-      <div class="field">
-        <label class="label has-text-white">Description(380 chars max)</label>
+    <div class="field">
+      <label class="label has-text-white">Description(380 chars max)</label>
         <div class="control">
           <textarea class="textarea" name="description" placeholder="Description (380 chars max)" maxlength="380"></textarea>
         </div>
-      </div>
+    </div>
 
-      <div class="control">
-        <button class="button resSubmit">Submit</button>
-      </div>
+    <div class="control">
+      <button class="button resSubmit">Submit</button>
+    </div>
     </form>
-</div>
+  </div>
 </div>

@@ -1,7 +1,5 @@
 <div class="container">
-  <form method="POST" action="/restaurants/<%= restaurant._id%>">
-
-    <%# have to add this for method override %>
+  <form method="POST" action="/restaurants/<%= restaurant._id%>"
     <input type="hidden" name="_method" value="PUT">
 
     <div class="field">
@@ -37,7 +35,7 @@
         <textarea class="textarea" name="link" placeholder="link to make a reservation"></textarea>
       </div>
     </div>
-    
+
     <div class="field">
       <label class="label">Description (380 chars max)</label>
       <div class="control">

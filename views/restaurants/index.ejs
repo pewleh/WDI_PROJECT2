@@ -3,10 +3,10 @@
   <form>
     <select name="cuisine" style="margin-bottom:30px;" class="selector">
       <% cuisines.forEach(cuisine => { %>
-        <option<% if(cuisine === selectedCuisine) {%> selected<%}%>><%= cuisine %></option> <% }) %>
-      </select>
-      <button>Go</button>
-    </form>
+      <option<% if(cuisine === selectedCuisine) {%> selected<%}%>><%= cuisine %></option> <% }) %>
+    </select>
+    <button>Go</button>
+  </form>
 
   <div class="columns is-multiline">
     <% restaurants.forEach(restaurant => { %>

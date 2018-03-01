@@ -15,10 +15,10 @@ const userAuth = require('./lib/userAuth');
 // Create our Express app
 const app = express();
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 // connect to our database
-mongoose.connect('mongodb://localhost/restaurants-database');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/restaurants-database');
 
 // set up our view engine (template engine)
 app.set('view engine', 'ejs');
