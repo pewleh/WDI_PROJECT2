@@ -35,7 +35,7 @@ function createRoute(req, res, next) {
 
 function showRoute(req,res, next) {
   Restaurant.findById(req.params.id)
-    .populate('comments.user')
+    .populate('user comments.user')
     .then(restaurant => {
       if(!restaurant) return res.render('pages/404');
       res.render('restaurants/show', { restaurant });

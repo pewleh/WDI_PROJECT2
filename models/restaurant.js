@@ -10,7 +10,7 @@ const commentSchema = new mongoose.Schema({
 });
 
 commentSchema.methods.isOwnedBy = function(user){
-  return this.user && user._id.equals(this.user._id);
+  return this.user._id && user._id.equals(this.user._id);
 };
 
 
@@ -23,9 +23,14 @@ const schema = new mongoose.Schema({
   image1: { type: String},
   image2: { type: String},
   image3: { type: String},
-  comments: [commentSchema]
+  comments: [commentSchema],
+  user: { type: mongoose.Schema.ObjectId, ref: 'User'}
 });
-
+//moderator tract.
+schema.methods.isOwnedBy = function(user){
+  return this.user._id && user._id.equals(this.user._id);
+};
+//.equals is the same as ===
 schema.virtual('overallRating')
   .get(function calculateRating() {
     if(!this.comments.length) return 'Unrated';

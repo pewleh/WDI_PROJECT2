@@ -27,11 +27,13 @@
 
 <div class = "rateButtons">
   <% if(locals.isAuthenticated) { %>
+    <% if(restaurant.isOwnedBy(locals.currentUser)) { %>
     <a href="/restaurants/<%= restaurant._id %>/edit" class="button is-primary">Edit</a>
     <form method="POST" action="/restaurants/<%= restaurant._id %>" style="margin-right: 30px;">
       <input type="hidden" name="_method" value="DELETE">
       <button class="button is-danger">Delete</button>
     </form>
+    <% } %>
 
     <% if(!locals.currentUser.hasFavourited(restaurant)) { %>
       <form method="POST" action="/restaurants/<%= restaurant._id %>/favourite">
