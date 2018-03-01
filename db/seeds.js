@@ -6,7 +6,7 @@ const User = require('../models/user');
 const userData = require('./data/user');
 
 //using promises
-mongoose.connect('mongodb://localhost/restaurants-database', (err, db) => {
+mongoose.connect(process.env.MONGOD_URI || 'mongodb://localhost/restaurants-database', (err, db) => {
   db.dropDatabase();
 
   User.create(userData)
