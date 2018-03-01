@@ -28,7 +28,7 @@ const schema = new mongoose.Schema({
 });
 //moderator tract.
 schema.methods.isOwnedBy = function(user){
-  return this.user._id && user._id.equals(this.user._id);
+  return this.user && user._id.equals(this.user._id);
 };
 //.equals is the same as ===
 schema.virtual('overallRating')

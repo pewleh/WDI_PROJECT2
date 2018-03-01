@@ -8,8 +8,9 @@
       </div>
       <div class="field has-text-white">
         <label for="email">Email</label>
-        <input class="input" type="text" name="email" id="email">
+        <input class="input" type="text" name="email" id="email" pattern="^.*@.*\..*$" required>
       </div>
+      <%# .* = any amount of any character \=exscpae the . so it doesnt think its an operator %>
       <div class="field has-text-white">
         <label for="password">Password</label>
         <input class="input" type="password" name="password" id="password">
@@ -17,6 +18,10 @@
       <div class="field has-text-white">
         <label for="passwordConfirmation">Password Confirmation</label>
         <input class="input" type="password" name="passwordConfirmation" id="passwordConfirmation">
+      </div>
+      <div class="field has-text-white">
+        <label for="Avatar">Avatar</label>
+        <input class="input" type="Avatar" name="avatar" id="avatar" value="https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-13-512.png">
       </div>
       <button class="regButton">Register</button>
     </form>

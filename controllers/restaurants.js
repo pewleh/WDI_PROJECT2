@@ -28,6 +28,9 @@ function newRoute(req, res) {
 }
 
 function createRoute(req, res, next) {
+
+  req.body.user = req.currentUser;
+
   Restaurant.create(req.body)
     .then(() => res.redirect('/restaurants'))
     .catch(next);
