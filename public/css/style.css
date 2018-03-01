@@ -1,6 +1,7 @@
 html{
-  background-color: #132d28;
+  background-color: #081921;
 }
+
 .hero.homepage {
   background-image: url(https://sbnsoftware.com/wp-content/uploads/sbn-hospitality-hotel-management-header.jpg);
   background-size: cover;
@@ -12,7 +13,7 @@ html{
 
 }
 .navbar-item{
-  color: white;
+  color: #ffffff99;
   font-family: 'Alegreya', serif;
   font-size: 20px;
 
@@ -32,7 +33,7 @@ form.delete {
 }
 
 .mainHead {
-  color: white;
+  color: #ffffffed;
   font-size: 3.95rem;
   font-weight: 20;
   font-family: 'Pacifico', cursive;
@@ -45,6 +46,7 @@ form.delete {
   position: absolute;
   margin-left: 2.5%;
   margin-top:2.5%;
+
 }
 
 .mainHeadDeco{
@@ -55,11 +57,11 @@ form.delete {
   border: dotted #4c5a5a26 4px;
   position: absolute;
   margin-left: 34%;
-  top: 12%;
+  top: 18%;
 }
 
 .mainSub {
-  color: white;
+  color: #ffffff99;
   font-size: 25px;
   font-weight: 400;
   font-family: 'Alegreya', serif;
@@ -68,7 +70,7 @@ form.delete {
   padding: 15px;
   width: 600px;
   margin-left: 28.5%;
-  border: solid #164409b5 4px;
+  border: solid #000000cc 4px;
   position:absolute;
   top:77%;
 }
@@ -88,45 +90,50 @@ form.delete {
   margin-left: 225px;
 }
 .newResDeco{
-  border: solid black 2px;
-  background-color: #0000008c;
+  border: solid #032538 2px;
+  background-color: #8e7fab26;
   border-radius: 4%;
 }
 
 .resSubmit{
-  background-color: #132d28;
-  border: dotted #132d28 6px;
-  color:white;
+  background-color: #2d6580;
+  border: solid #132d28 2px;
+  color: #ffffff99;
 }
 
 .resHead{
   text-align: center;
   font-family: 'Pacifico', cursive;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 5;
   padding-bottom: 20px;
+  color: #ffffff99;
+
 
 }
 
 .registrationForm{
   width:550px;
   position: absolute;
-  border: solid #22460c 2px;
+  border: solid #2a222b 2px;
   border-radius: 15%;
   padding: 30px;
-  background-color: #8be9f369;
+  background-color: #4c3942e0;;
   text-align: center;
   font-family: 'Alegreya', serif;
+  margin-top: 20px;
+  box-shadow: 0px 2px 31px 15px rgba(54,42,56,0.73);
 
 }
 .innerRegForm{
   padding: 20px;
-  border: 2px solid #050803d1;
+  border: 2px solid #362a38;
   border-radius: 15%;
   background-color: #050e0d6b;
 }
 .registrationFormPics{
   margin-left:620px;
+  margin-top: 50px;
 }
 
 .regButton{
@@ -139,4 +146,81 @@ form.delete {
 
 .slick-track{
   height:400px;
+}
+
+.imageRating{
+  margin-left: 50px;
+  position: absolute;
+}
+
+.rateHead {
+    font-family: 'Pacifico', cursive;
+    color: #ffffff99;
+    font-size: 35px;
+    padding: 30px;
+    text-align: center;
+}
+
+.resTitle{
+  font-size: 3rem;
+}
+.outerDisplayRatings{
+  margin-left: 800px;
+  margin-top:210px;
+}
+.displayRatings{
+  font-family: 'Alegreya', serif;
+  width: 500px;
+  padding: 20px;
+  border: 6px #ffffff99 dotted;
+  border-radius: 50px;
+
+}
+
+.ratings{
+  padding:10px;
+  font-size: 25px;
+  text-align:center;
+}
+
+.inlineRate{
+  display: inline-flex;
+  padding:20px;
+  margin-left: 200px;
+}
+
+.rateButtons{
+  display: inline-flex;
+  margin-left:82%;
+  margin-top: 150px;
+
+}
+
+.mainRating{
+  font-size: 30px;
+}
+
+.favouriteButton{
+  background-color: #c1fcff;
+  border-radius: 50%;
+  border: solid 4px #8ae3e6;
+  height: 65px;
+
+
+}
+.ratingForm{
+  margin-top:80px;
+}
+
+p{
+  font-size: 20px;
+  font-family: 'Alegreya', serif;
+}
+
+.logo{
+  margin-left: -50px;
+}
+.profileBio{
+  color:#ffffff99;
+  text-align: center;
 }

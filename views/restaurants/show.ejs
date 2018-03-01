@@ -1,99 +1,105 @@
-<div class="container">
-  <h3 class="title has-text-white"><%= restaurant.name %></h3> <br>
+<div class="imageRating">
+  <h3 class="title has-text-white resTitle"><%= restaurant.name %></h3> <br>
   <h4 class="subtitle has-text-white"><%= restaurant.cuisine %></h4>
   <div class="imgCarousel">
     <div><img src="<%= restaurant.image1 %>"></div>
     <div><img src="<%= restaurant.image2 %>"></div>
     <div><img src="<%= restaurant.image3 %>"></div>
   </div>
-  <div class="columns">
-    <div class="column has-text-white">
-      <h3 class="subtitle has-text-white">Overall rating:<%= restaurant.overallRating %></h3>
-      <h3 class="subtitle has-text-white">Food:<%= restaurant.foodRating %></h3>
-      <h3 class="subtitle has-text-white">Service:<%= restaurant.serviceRating %></h3>
-      <h3 class="subtitle has-text-white">Ambiance:<%= restaurant.ambianceRating%></h3>
-      <div class="icon is-small">
-        <i class="fa fa-pencil"></i>
-      </div>
-      <p><%= restaurant.description %></p>
-      <br>
-      <p><%= restaurant.location %></p>
-      <br>
-      <a href = "<%= restaurant.link %>">Make a reservation</a>
-
-    </div>
+  <div class="icon is-small">
+    <i class="fa fa-pencil"></i>
   </div>
+  <p class="has-text-white"><%= restaurant.description %></p>
+  <br>
+  <p class="has-text-white"><%= restaurant.location %></p>
+  <br>
+  <a href = "<%= restaurant.link %>">Make a reservation</a>
+</div>
+
+<div class="outerDisplayRatings">
+  <div class="column has-text-white displayRatings" >
+    <h1 class="subtitle has-text-white ratings mainRating">Overall rating:<%= restaurant.overallRating %></h1>
+    <h3 class="subtitle has-text-white ratings">Food: <%= restaurant.foodRating %></h3>
+    <h3 class="subtitle has-text-white ratings">Service: <%= restaurant.serviceRating %></h3>
+    <h3 class="subtitle has-text-white ratings">Ambiance: <%= restaurant.ambianceRating%></h3>
+  </div>
+</div>
+
+<div class = "rateButtons">
   <% if(locals.isAuthenticated) { %>
     <a href="/restaurants/<%= restaurant._id %>/edit" class="button is-primary">Edit</a>
-
-    <form method="POST" action="/restaurants/<%= restaurant._id %>">
+    <form method="POST" action="/restaurants/<%= restaurant._id %>" style="margin-right: 30px;">
       <input type="hidden" name="_method" value="DELETE">
       <button class="button is-danger">Delete</button>
     </form>
 
-  <% if(!locals.currentUser.hasFavourited(restaurant)) { %>
-    <form method="POST" action="/restaurants/<%= restaurant._id %>/favourite">
-      <input type="hidden" name="_method" value="<% restaurant._id %>">
-      <button class="button is-primary">Favourite</button>
-    </form>
-  <% } else { %>
-    <form method="POST" action="/restaurants/<%= restaurant._id %>/favourite">
-      <input type="hidden" name="_method" value="DELETE">
-      <button class="button is-primary">Unfavourite</button>
-    </form>
-  <% } %>
+    <% if(!locals.currentUser.hasFavourited(restaurant)) { %>
+      <form method="POST" action="/restaurants/<%= restaurant._id %>/favourite">
+        <input type="hidden" name="_method" value="<% restaurant._id %>">
+        <button class="button is-primary">Favourite</button>
+      </form>
+      <% } else { %>
+      <form method="POST" action="/restaurants/<%= restaurant._id %>/favourite">
+        <input type="hidden" name="_method" value="DELETE">
+        <button class="button is-primary">Unfavourite</button>
+      </form>
+    <% } %>
+</div>
 
-    <div class="commentsRight"
-      <ul class="comments">
-      <% restaurant.comments.forEach(comment => { %>
-        <li>
-          <div class="box">
-            <% if(comment.isOwnedBy(locals.currentUser)) { %>
-              <form class="delete" method="POST" action="/restaurants/<%= restaurant._id %>/comments/<%= comment._id %>">
+
+<div class="commentsRight"
+  <ul class="comments">
+    <% restaurant.comments.forEach(comment => { %>
+      <li style="margin-top: 50px;">
+        <div class="box" style="background-color:#ffffffba;">
+          <% if(comment.isOwnedBy(locals.currentUser)) { %>
+            <form class="delete" method="POST" action="/restaurants/<%= restaurant._id %>/comments/<%= comment._id %>">
               <input type="hidden" name="_method" value="DELETE">
               <button class="delete">x</button>
-              </form>
-  <% } %>
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-      </figure>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <h3><%= comment.rating %></h3>
+            </form>
+    <% } %>
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <h3><%= comment.rating %></h3>
           <p><%= comment.content %></p>
-            <% if(comment.user){ %>
+          <% if(comment.user){ %>
             <strong><%= comment.user.username %></strong>
           <% } %>
+        </div>
       </div>
-    </div>
-  </article>
+    </article>
   </div>
-    </li>
-  <% }) %>
-    </ul>
-  </div>
-    <form method="POST" action="/restaurants/<%= restaurant._id %>/comments">
-      <textarea class="textarea" name="content"></textarea>
-        <div class="field">
-        <label class="label has-text-white">Food</label>
-          <div class="control">
-            <div class="select">
-              <select name="food">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+<div class="ratingForm">
+<h1 class="rateHead">What did you think?</h1>
+<form method="POST" action="/restaurants/<%= restaurant._id %>/comments">
+  <textarea class="textarea" name="content" style="background-color:#494b523b; color:white;"></textarea>
+    <div class="field inlineRate">
+      <label class="label has-text-white">Food_</label>
+        <div class="control">
+          <div class="select">
+            <select name="food">
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+           </div>
           </div>
         </div>
-        <div class="field">
-          <label class="label has-text-white">Service</label>
+        <div class="field inlineRate">
+          <label class="label has-text-white">Service_</label>
             <div class="control">
               <div class="select">
                 <select name="service">
@@ -107,22 +113,23 @@
               </div>
             </div>
           </div>
-          <div class="field">
-            <label class="label has-text-white">Ambiance</label>
+          <div class="field inlineRate">
+            <label class="label has-text-white">Ambiance_</label>
               <div class="control">
-                <div class="select">
-                  <select name="ambiance">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
+              <div class="select">
+                <select name="ambiance">
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
               </div>
             </div>
+          </div>
           <button class="button is-primary">Submit</button>
-    </form>
-<% } %>
+ </form>
+ </div>
+  <% } %>
 </div>

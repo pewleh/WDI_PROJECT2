@@ -1,7 +1,7 @@
 <main class="container">
-
+  <h1 class="resHead">Eat your heart out</h1>
   <form>
-    <select name="cuisine">
+    <select name="cuisine" style="margin-bottom:30px;" class="selector">
       <% cuisines.forEach(cuisine => { %>
         <option<% if(cuisine === selectedCuisine) {%> selected<%}%>><%= cuisine %></option> <% }) %>
       </select>
@@ -27,4 +27,5 @@
       </div>
     <% }) %>
   </div>
+  <h1 class="resHead">Eat your heart out</h1>
 </main>
