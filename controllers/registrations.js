@@ -6,7 +6,15 @@ function newRoute(req, res) {
 
 function createRoute(req, res, next) {
   User.create(req.body)
-    .then(() => res.redirect('/restaurants'))
+    .then(user => {
+      if(!user || !user.validatePassword(req.body.password)){
+        return res.redirect('/login');
+      }
+      req.session.userId = user._id;
+
+      req.flash('success', `Welcome ${user.username}`);
+      res.redirect('/restaurants');
+    })
     .catch(next);
 }
 
