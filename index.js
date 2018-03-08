@@ -62,6 +62,3 @@ app.use((err, req, res, next) => { // eslint-disable-line
 
 // Listen for incoming traffic
 app.listen(PORT, () => console.log(`Up and running on port ${PORT}`));
-
-
-// Heroku test line 
