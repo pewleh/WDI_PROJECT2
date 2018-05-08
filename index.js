@@ -44,13 +44,10 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-//must come AFTER express-session
 app.use(flash());
 
 app.use(userAuth);
 
-
-//set up our Router, required it above so now tell it to use it
 app.use(router);
 
 //set up a global error catcher

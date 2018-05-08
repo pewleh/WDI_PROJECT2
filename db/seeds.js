@@ -5,7 +5,7 @@ let restaurantData = require('./data/restaurants');
 const User = require('../models/user');
 const userData = require('./data/user');
 
-//using promises
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/restaurants-database', (err, db) => {
   db.dropDatabase();
 
@@ -27,12 +27,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/restaurants-dat
     .then(restaurants => console.log(`${restaurants.length} restaurants created`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
-
-  // Restaurant.create(restaurantData)
-  //   .then(restaurants => console.log(`${restaurants.length} restaurants created`))
-  //   // .then(() => User.create(userData))
-  //   // .then(users => console.log(`${users.length} users created`))
-  //   .catch(err => console.log(err))
-  //   .finally(() => mongoose.connection.close());
-
 });

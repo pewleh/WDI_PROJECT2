@@ -1,10 +1,7 @@
 const Restaurant = require('../models/restaurant');
 const Promise = require('bluebird');
 
-// function indexRoute(req, res) {
-//   Restaurant.find()
-//     .then(restaurants => res.render('restaurants/index', { restaurants }));
-// }
+
 function indexRoute(req, res){
   Promise.props({
     allRestaurants: Restaurant.find().exec(),
@@ -123,8 +120,3 @@ module.exports = {
   resFavourite: resFavouriteRoute,
   deleteFavourite: deleteFavouriteRoute
 };
-
-//after phto: res.render('restaurants/index', {restaurants: data.restauant, origins, selectedOrigin: req.query.origin});
-//index form
-
-//add.sort too.

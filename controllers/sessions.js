@@ -11,7 +11,6 @@ function createRoute(req, res, next) {
         return res.redirect('/login');
       }
       req.session.userId = user._id;
-
       req.flash('success', `Welcome back ${user.username}`);
       res.redirect('/restaurants');
     })

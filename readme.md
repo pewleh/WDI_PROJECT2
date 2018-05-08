@@ -34,12 +34,14 @@ They are also able to edit and delete the restaurants they've added themselves.
 
 
 <p align="center"><img src="images/3.png" width="700"></p>
+<p align="center"><img src="images/2ss.png" width="700"></p>
 Once signed in, users are greeted with a flash message welcoming them back. The gallery depicts all restaurants available and a filter is located at the top left hand side of the screen based on the cuisine the user desires.
 
 <p align="center"><img src="images/4.png" width="700"></p>
 Each restaurant has is own show page where the overall rating is depicted by the carousel displaying images of the food and/or location.
 A direct link allows easy access to the restaurants booking service.
 <p align="center"><img src="images/5.png" width="700"></p>
+<p align="center"><img src="images/1ss.png" width="450"></p>
 If authenticated, the user is able to leave their rating alongside a comment. The comment will depict the users profile picture, or a standard icon if one was not chosen.
 
 <p align="center"><img src="images/7.png" width="700"></p>
